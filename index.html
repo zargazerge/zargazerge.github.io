@@ -659,7 +659,7 @@
                         <span class="tech-tag">Photoshop</span>
                         <span class="tech-tag">AutoCAD</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project1')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project1">View Details</button>
                 </div>
                 
                 <div class="portfolio-item">
@@ -674,7 +674,7 @@
                         <span class="tech-tag">Substance Designer</span>
                         <span class="tech-tag">Photoshop</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project2')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project2">View Details</button>
                 </div>
                 
                 <div class="portfolio-item">
@@ -689,7 +689,7 @@
                         <span class="tech-tag">Substance Painter</span>
                         <span class="tech-tag">Marmoset Toolbag</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project3')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project3">View Details</button>
                 </div>
                 
                 <div class="portfolio-item">
@@ -704,7 +704,7 @@
                         <span class="tech-tag">SpeedTree</span>
                         <span class="tech-tag">World Creator</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project4')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project4">View Details</button>
                 </div>
                 
                 <div class="portfolio-item">
@@ -719,7 +719,7 @@
                         <span class="tech-tag">Octane Render</span>
                         <span class="tech-tag">Illustrator</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project5')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project5">View Details</button>
                 </div>
                 
                 <div class="portfolio-item">
@@ -734,7 +734,7 @@
                         <span class="tech-tag">Mari</span>
                         <span class="tech-tag">Nuke</span>
                     </div>
-                    <button class="view-details-btn" onclick="openModal('project6')">View Details</button>
+                    <button class="view-details-btn" data-project-id="project6">View Details</button>
                 </div>
             </div>
         </div>
@@ -1046,3 +1046,18 @@
                 closeModal();
             }
         });
+
+        // Modern event handling for portfolio buttons
+        const detailButtons = document.querySelectorAll('.view-details-btn');
+        detailButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const projectId = button.dataset.projectId;
+                if (projectId) {
+                    openModal(projectId);
+                }
+            });
+        });
+    
+    </script>
+</body>
+</html>
