@@ -890,4 +890,159 @@
                 title: "Sci-Fi Character Series",
                 company: "GameDev Studios",
                 year: "2024",
-                description: "Complete character development pipeline for a sci-fi gaming project. The work encompassed concept refinement, high-poly sculpting, retopology, UV mapping, texturing, and final presentation renders. The character design focused on futuristic armor and cybernetic enhancements while maintaining human proportions
+                description: "Complete character development pipeline for a sci-fi gaming project. The work encompassed concept refinement, high-poly sculpting, retopology, UV mapping, texturing, and final presentation renders. The character design focused on futuristic armor and cybernetic enhancements while maintaining human proportions and appeal.",
+                techStack: ["ZBrush", "Maya", "Substance Painter", "Marmoset Toolbag"],
+                images: [
+                    "Project 3 - Character Turnaround",
+                    "Project 3 - Detail Sculpt",
+                    "Project 3 - Texture Breakdown",
+                    "Project 3 - Posed Render",
+                    "Project 3 - Concept Comparison",
+                    "Project 3 - Technical Sheet"
+                ]
+            },
+            project4: {
+                title: "Fantasy Forest Environment",
+                company: "Personal Project",
+                year: "2023",
+                description: "A stylized fantasy environment showcasing organic modeling techniques and natural asset creation. This personal project explored advanced vegetation systems, atmospheric effects, and mood lighting. The scene was optimized for real-time rendering while maintaining artistic quality and immersive atmosphere.",
+                techStack: ["Blender", "Unreal Engine", "SpeedTree", "World Creator"],
+                images: [
+                    "Project 4 - Overview Shot",
+                    "Project 4 - Path Detail",
+                    "Project 4 - Tree Studies",
+                    "Project 4 - Lighting Variations",
+                    "Project 4 - Asset Library",
+                    "Project 4 - Behind Scenes"
+                ]
+            },
+            project5: {
+                title: "Corporate Brand Animation",
+                company: "Digital Marketing Co.",
+                year: "2024",
+                description: "Dynamic 3D logo animation and motion graphics suite for corporate branding. The project included multiple animation variations for different use cases - from social media posts to large-scale presentation displays. Emphasis was placed on smooth motion, elegant transitions, and brand color consistency.",
+                techStack: ["Cinema 4D", "After Effects", "Octane Render", "Illustrator"],
+                images: [
+                    "Project 5 - Logo Animation",
+                    "Project 5 - Brand Elements",
+                    "Project 5 - Motion Study",
+                    "Project 5 - Color Variants",
+                    "Project 5 - Style Frames",
+                    "Project 5 - Final Sequence"
+                ]
+            },
+            project6: {
+                title: "Electric Vehicle Showcase",
+                company: "EV Motors Ltd.",
+                year: "2023",
+                description: "Comprehensive automotive visualization for electric vehicle launch campaign. The project covered exterior beauty shots, detailed interior renders, and technical cutaway illustrations. Advanced car paint materials and studio lighting setups were crucial for achieving the premium look required for automotive marketing.",
+                techStack: ["Maya", "Arnold", "Mari", "Nuke"],
+                images: [
+                    "Project 6 - Exterior Beauty",
+                    "Project 6 - Interior Luxury",
+                    "Project 6 - Technical Cutaway",
+                    "Project 6 - Color Options",
+                    "Project 6 - Detail Shots",
+                    "Project 6 - Environmental Context"
+                ]
+            }
+        };
+
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            // Update modal content
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalCompany').textContent = project.company;
+            document.getElementById('modalYear').textContent = project.year;
+            document.getElementById('modalDescription').textContent = project.description;
+
+            // Update tech stack
+            const techStackContainer = document.getElementById('modalTechStack');
+            techStackContainer.innerHTML = '';
+            project.techStack.forEach(tech => {
+                const tag = document.createElement('span');
+                tag.className = 'tech-tag';
+                tag.textContent = tech;
+                techStackContainer.appendChild(tag);
+            });
+
+            // Setup carousel
+            setupCarousel(project.images);
+            
+            // Show modal
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function setupCarousel(images) {
+            const track = document.getElementById('carouselTrack');
+            const indicators = document.getElementById('carouselIndicators');
+            
+            // Clear existing content
+            track.innerHTML = '';
+            indicators.innerHTML = '';
+            
+            totalSlides = images.length;
+            currentSlide = 0;
+
+            // Create slides
+            images.forEach((imageText, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.textContent = imageText;
+                track.appendChild(slide);
+
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'carousel-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.onclick = () => goToSlide(index);
+                indicators.appendChild(indicator);
+            });
+
+            updateCarousel();
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
