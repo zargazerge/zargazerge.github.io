@@ -215,7 +215,7 @@
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -223,10 +223,11 @@
         .portfolio-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 30px;
-            text-align: center;
+            padding: 25px;
+            text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0, 188, 212, 0.2);
+            cursor: pointer;
         }
 
         .portfolio-item:hover {
@@ -236,7 +237,7 @@
 
         .portfolio-placeholder {
             width: 100%;
-            height: 200px;
+            height: 220px;
             background: linear-gradient(135deg, #333, #555);
             border-radius: 10px;
             display: flex;
@@ -245,6 +246,220 @@
             color: #888;
             font-size: 1.1rem;
             margin-bottom: 20px;
+        }
+
+        .portfolio-item h3 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-item .company {
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .portfolio-item .year {
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-item p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(0, 188, 212, 0.2);
+            color: #00bcd4;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .view-details-btn {
+            background: linear-gradient(135deg, #00bcd4, #0097a7);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 900px;
+            max-height: 80vh;
+            width: 90%;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(0, 188, 212, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            color: #00bcd4;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: white;
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+        }
+
+        .modal-title {
+            color: #00bcd4;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-company {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .modal-year {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-description {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #222;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 188, 212, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 188, 212, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 15px;
+        }
+
+        .carousel-btn.next {
+            right: 15px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #00bcd4;
         }
 
         /* Contact Form */
@@ -439,7 +654,7 @@
             <h2>Get In Touch</h2>
             <div class="contact-info">
                 <a href="mailto:zargazerge@gmail.com">zargazerge@gmail.com</a>
-                <a href="https://www.linkedin.com/in/zoltan-varga-6345b7350/" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/zoltan-varga-6345b7350/" target="_blank">LinkedIn Profile</a>
             </div>
             <div class="contact-form">
                 <form>
@@ -498,11 +713,210 @@
             });
         });
 
-        // Form submission (you'll need to connect this to a backend service)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Portfolio Modal System
+        let currentSlide = 0;
+        let totalSlides = 0;
+
+        const projectData = {
+            project1: {
+                title: "Modern Office Complex",
+                company: "ABC Architecture Studio",
+                year: "2024",
+                description: "This comprehensive architectural visualization project involved creating photorealistic renders of a modern office complex. The project required detailed modeling of the building's contemporary architecture, realistic material creation, and advanced lighting setups to showcase different times of day and weather conditions. Special attention was paid to the surrounding landscape and urban environment to provide context.",
+                techStack: ["3ds Max", "V-Ray", "Photoshop", "AutoCAD"],
+                images: [
+                    "Project 1 - Exterior Day View",
+                    "Project 1 - Exterior Night View", 
+                    "Project 1 - Interior Lobby",
+                    "Project 1 - Office Space",
+                    "Project 1 - Aerial View",
+                    "Project 1 - Detail Shots"
+                ]
+            },
+            project2: {
+                title: "Luxury Watch Campaign",
+                company: "Premium Timepieces Inc.",
+                year: "2023",
+                description: "High-end product visualization for luxury timepiece marketing campaign. This project demanded exceptional attention to detail in material creation, particularly for metals, glass, and leather components. Advanced studio lighting techniques were employed to achieve magazine-quality renders suitable for print and digital advertising campaigns.",
+                techStack: ["Blender", "Cycles", "Substance Designer", "Photoshop"],
+                images: [
+                    "Project 2 - Hero Shot",
+                    "Project 2 - Close-up Details",
+                    "Project 2 - Movement Study",
+                    "Project 2 - Lifestyle Context",
+                    "Project 2 - Color Variations",
+                    "Project 2 - Studio Setup"
+                ]
+            },
+            project3: {
+                title: "Sci-Fi Character Series",
+                company: "GameDev Studios",
+                year: "2024",
+                description: "Complete character development pipeline for a sci-fi gaming project. The work encompassed concept refinement, high-poly sculpting, retopology, UV mapping, texturing, and final presentation renders. The character design focused on futuristic armor and cybernetic enhancements while maintaining human proportions and appeal.",
+                techStack: ["ZBrush", "Maya", "Substance Painter", "Marmoset Toolbag"],
+                images: [
+                    "Project 3 - Character Turnaround",
+                    "Project 3 - Detail Sculpt",
+                    "Project 3 - Texture Breakdown",
+                    "Project 3 - Posed Render",
+                    "Project 3 - Concept Comparison",
+                    "Project 3 - Technical Sheet"
+                ]
+            },
+            project4: {
+                title: "Fantasy Forest Environment",
+                company: "Personal Project",
+                year: "2023",
+                description: "A stylized fantasy environment showcasing organic modeling techniques and natural asset creation. This personal project explored advanced vegetation systems, atmospheric effects, and mood lighting. The scene was optimized for real-time rendering while maintaining artistic quality and immersive atmosphere.",
+                techStack: ["Blender", "Unreal Engine", "SpeedTree", "World Creator"],
+                images: [
+                    "Project 4 - Overview Shot",
+                    "Project 4 - Path Detail",
+                    "Project 4 - Tree Studies",
+                    "Project 4 - Lighting Variations",
+                    "Project 4 - Asset Library",
+                    "Project 4 - Behind Scenes"
+                ]
+            },
+            project5: {
+                title: "Corporate Brand Animation",
+                company: "Digital Marketing Co.",
+                year: "2024",
+                description: "Dynamic 3D logo animation and motion graphics suite for corporate branding. The project included multiple animation variations for different use cases - from social media posts to large-scale presentation displays. Emphasis was placed on smooth motion, elegant transitions, and brand color consistency.",
+                techStack: ["Cinema 4D", "After Effects", "Octane Render", "Illustrator"],
+                images: [
+                    "Project 5 - Logo Animation",
+                    "Project 5 - Brand Elements",
+                    "Project 5 - Motion Study",
+                    "Project 5 - Color Variants",
+                    "Project 5 - Style Frames",
+                    "Project 5 - Final Sequence"
+                ]
+            },
+            project6: {
+                title: "Electric Vehicle Showcase",
+                company: "EV Motors Ltd.",
+                year: "2023",
+                description: "Comprehensive automotive visualization for electric vehicle launch campaign. The project covered exterior beauty shots, detailed interior renders, and technical cutaway illustrations. Advanced car paint materials and studio lighting setups were crucial for achieving the premium look required for automotive marketing.",
+                techStack: ["Maya", "Arnold", "Mari", "Nuke"],
+                images: [
+                    "Project 6 - Exterior Beauty",
+                    "Project 6 - Interior Luxury",
+                    "Project 6 - Technical Cutaway",
+                    "Project 6 - Color Options",
+                    "Project 6 - Detail Shots",
+                    "Project 6 - Environmental Context"
+                ]
+            }
+        };
+
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            // Update modal content
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalCompany').textContent = project.company;
+            document.getElementById('modalYear').textContent = project.year;
+            document.getElementById('modalDescription').textContent = project.description;
+
+            // Update tech stack
+            const techStackContainer = document.getElementById('modalTechStack');
+            techStackContainer.innerHTML = '';
+            project.techStack.forEach(tech => {
+                const tag = document.createElement('span');
+                tag.className = 'tech-tag';
+                tag.textContent = tech;
+                techStackContainer.appendChild(tag);
+            });
+
+            // Setup carousel
+            setupCarousel(project.images);
+            
+            // Show modal
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function setupCarousel(images) {
+            const track = document.getElementById('carouselTrack');
+            const indicators = document.getElementById('carouselIndicators');
+            
+            // Clear existing content
+            track.innerHTML = '';
+            indicators.innerHTML = '';
+            
+            totalSlides = images.length;
+            currentSlide = 0;
+
+            // Create slides
+            images.forEach((imageText, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.textContent = imageText;
+                track.appendChild(slide);
+
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'carousel-indicator';
+                if (index === 0) indicator.classList.add('active');
+                indicator.onclick = () => goToSlide(index);
+                indicators.appendChild(indicator);
+            });
+
+            updateCarousel();
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
     </script>
 </body>
