@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -178,8 +179,13 @@
         }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
 
         /* Section Styling */
@@ -246,6 +252,15 @@
             color: #888;
             font-size: 1.1rem;
             margin-bottom: 20px;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .portfolio-item h3 {
@@ -403,14 +418,17 @@
         }
 
         .carousel-slide {
-            min-width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #333, #555);
-            display: flex;
+            flex: 0 0 100%;
+            background: #000;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-size: 1.2rem;
+        }
+
+        .carousel-slide img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
         }
 
         .carousel-btn {
@@ -594,6 +612,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -614,14 +633,16 @@
             <div class="hero-content">
                 <h1>Hi, I'm Zoltan Varga</h1>
                 <div class="subtitle">3D Generalist</div>
-                <p>Passionate about creating stunning 3D visuals and bringing imagination to life. Specializing in modeling, texturing, lighting, and animation to deliver compelling visual experiences.</p>
+                <p>Passionate about creating stunning 3D visuals and bringing imagination to life. Specializing in
+                    modeling, texturing, lighting, and animation to deliver compelling visual experiences.</p>
                 <div class="hero-buttons">
                     <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
                     <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                 </div>
                 <div class="social-links">
                     <a href="mailto:zargazerge@gmail.com" class="social-icon">@</a>
-                    <a href="https://www.linkedin.com/in/zoltan-varga-6345b7350/" class="social-icon" target="_blank">in</a>
+                    <a href="https://www.linkedin.com/in/zoltan-varga-6345b7350/" class="social-icon"
+                        target="_blank">in</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -636,8 +657,12 @@
     <section id="about" class="section">
         <div class="section-container">
             <h2>About Me</h2>
-            <p>As a dedicated 3D Generalist, I combine technical expertise with creative vision to produce high-quality 3D content. My experience spans across various aspects of 3D production including modeling, sculpting, texturing, lighting, and animation.</p>
-            <p>I'm passionate about pushing the boundaries of what's possible in 3D graphics and constantly learning new techniques and technologies to enhance my craft. Whether it's architectural visualization, product rendering, or character design, I bring attention to detail and artistic flair to every project.</p>
+            <p>As a dedicated 3D Generalist, I combine technical expertise with creative vision to produce high-quality
+                3D content. My experience spans across various aspects of 3D production including modeling, sculpting,
+                texturing, lighting, and animation.</p>
+            <p>I'm passionate about pushing the boundaries of what's possible in 3D graphics and constantly learning new
+                techniques and technologies to enhance my craft. Whether it's architectural visualization, product
+                rendering, or character design, I bring attention to detail and artistic flair to every project.</p>
         </div>
     </section>
 
@@ -647,95 +672,6 @@
             <h2>Portfolio</h2>
             <p>Here are some of my recent 3D projects showcasing various skills and techniques.</p>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Architectural Visualization</div>
-                    <h3>Modern Office Complex</h3>
-                    <div class="company">ABC Architecture Studio</div>
-                    <div class="year">2024</div>
-                    <p>Comprehensive architectural visualization project featuring photorealistic renders of a contemporary office building with detailed lighting and environmental design.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">3ds Max</span>
-                        <span class="tech-tag">V-Ray</span>
-                        <span class="tech-tag">Photoshop</span>
-                        <span class="tech-tag">AutoCAD</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project1">View Details</button>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Product Visualization</div>
-                    <h3>Luxury Watch Campaign</h3>
-                    <div class="company">Premium Timepieces Inc.</div>
-                    <div class="year">2023</div>
-                    <p>High-end product visualization for luxury timepiece marketing campaign with studio-quality lighting and material detail.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Blender</span>
-                        <span class="tech-tag">Cycles</span>
-                        <span class="tech-tag">Substance Designer</span>
-                        <span class="tech-tag">Photoshop</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project2">View Details</button>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Character Design</div>
-                    <h3>Sci-Fi Character Series</h3>
-                    <div class="company">GameDev Studios</div>
-                    <div class="year">2024</div>
-                    <p>Complete character development pipeline from concept to final render, featuring futuristic design and detailed texturing work.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">ZBrush</span>
-                        <span class="tech-tag">Maya</span>
-                        <span class="tech-tag">Substance Painter</span>
-                        <span class="tech-tag">Marmoset Toolbag</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project3">View Details</button>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Environment Art</div>
-                    <h3>Fantasy Forest Environment</h3>
-                    <div class="company">Personal Project</div>
-                    <div class="year">2023</div>
-                    <p>Stylized fantasy environment showcasing organic modeling techniques, vegetation systems, and atmospheric lighting effects.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Blender</span>
-                        <span class="tech-tag">Unreal Engine</span>
-                        <span class="tech-tag">SpeedTree</span>
-                        <span class="tech-tag">World Creator</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project4">View Details</button>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Motion Graphics</div>
-                    <h3>Corporate Brand Animation</h3>
-                    <div class="company">Digital Marketing Co.</div>
-                    <div class="year">2024</div>
-                    <p>Dynamic 3D logo animation and motion graphics suite for corporate branding with smooth transitions and elegant design.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Cinema 4D</span>
-                        <span class="tech-tag">After Effects</span>
-                        <span class="tech-tag">Octane Render</span>
-                        <span class="tech-tag">Illustrator</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project5">View Details</button>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-placeholder">Automotive Render</div>
-                    <h3>Electric Vehicle Showcase</h3>
-                    <div class="company">EV Motors Ltd.</div>
-                    <div class="year">2023</div>
-                    <p>Comprehensive automotive visualization for electric vehicle launch campaign featuring exterior beauty shots and technical illustrations.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Maya</span>
-                        <span class="tech-tag">Arnold</span>
-                        <span class="tech-tag">Mari</span>
-                        <span class="tech-tag">Nuke</span>
-                    </div>
-                    <button class="view-details-btn" data-project-id="project6">View Details</button>
-                </div>
             </div>
         </div>
     </section>
@@ -744,13 +680,13 @@
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">&times;</button>
-            
+
             <div class="modal-header">
                 <h2 id="modalTitle" class="modal-title">Project Title</h2>
                 <div id="modalCompany" class="modal-company">Company Name</div>
                 <div id="modalYear" class="modal-year">Year</div>
             </div>
-            
+
             <div class="carousel-container">
                 <div class="carousel">
                     <div id="carouselTrack" class="carousel-track">
@@ -763,11 +699,11 @@
                     <!-- Indicators will be dynamically added here -->
                 </div>
             </div>
-            
+
             <div class="modal-description">
                 <p id="modalDescription">Project description will appear here.</p>
             </div>
-            
+
             <div class="tech-stack">
                 <div id="modalTechStack">
                     <!-- Tech tags will be dynamically added here -->
@@ -823,7 +759,7 @@
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -844,7 +780,7 @@
         // Form submission
         const form = document.querySelector('form');
         if (form) {
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 alert('Thank you for your message! I\'ll get back to you soon.');
                 this.reset();
@@ -857,48 +793,65 @@
 
         const projectData = {
             project1: {
-                title: "Modern Office Complex",
-                company: "ABC Architecture Studio",
-                year: "2024",
+                title: "Architectural Designs",
+                company: "Various Companies",
+                year: "2018 - 2021",
+                thumbnail: "images/arch/arch_thumbnail.jpg",
                 description: "This comprehensive architectural visualization project involved creating photorealistic renders of a modern office complex. The project required detailed modeling of the building's contemporary architecture, realistic material creation, and advanced lighting setups to showcase different times of day and weather conditions. Special attention was paid to the surrounding landscape and urban environment to provide context.",
-                techStack: ["3ds Max", "V-Ray", "Photoshop", "AutoCAD"],
+                techStack: ["3ds Max", "V-Ray", "Photoshop", "ArchiCad"],
                 images: [
-                    "Project 1 - Exterior Day View",
-                    "Project 1 - Exterior Night View", 
-                    "Project 1 - Interior Lobby",
-                    "Project 1 - Office Space",
-                    "Project 1 - Aerial View",
-                    "Project 1 - Detail Shots"
+                    "images/arch/exterior_001.jpg",
+                    "images/arch/exterior_002.jpg",
+                    "images/arch/exterior_003.jpg",
+                    "images/arch/exterior_004.jpg",
+                    "images/arch/exterior_005.jpg",
+                    "images/arch/exterior_006.jpg",
+                    "images/arch/interior_001.jpg",
+                    "images/arch/interior_002.jpg",
+                    "images/arch/interior_003.jpg",
+                    "images/arch/interior_004.jpg",
+                    "images/arch/interior_005.jpg",
+                    "images/arch/interior_006.jpg"
                 ]
             },
             project2: {
-                title: "Luxury Watch Campaign",
-                company: "Premium Timepieces Inc.",
+                title: "Honda Touch",
+                company: "Arworks Ltd.",
                 year: "2023",
+                thumbnail: "images/honda/honda_thumbnail.jpg",
                 description: "High-end product visualization for luxury timepiece marketing campaign. This project demanded exceptional attention to detail in material creation, particularly for metals, glass, and leather components. Advanced studio lighting techniques were employed to achieve magazine-quality renders suitable for print and digital advertising campaigns.",
-                techStack: ["Blender", "Cycles", "Substance Designer", "Photoshop"],
+                techStack: ["3ds Max", "Substance Painter", "Unity", "Photoshop"],
                 images: [
-                    "Project 2 - Hero Shot",
-                    "Project 2 - Close-up Details",
-                    "Project 2 - Movement Study",
-                    "Project 2 - Lifestyle Context",
-                    "Project 2 - Color Variations",
-                    "Project 2 - Studio Setup"
+                    "images/honda/honda_001.jpg",
+                    "images/honda/honda_002.jpg",
+                    "images/honda/honda_003.jpg",
+                    "images/honda/honda_004.jpg",
+                    "images/honda/honda_005.jpg",
+                    "images/honda/honda_006.jpg",
+                    "images/honda/honda_007.jpg",
+                    "images/honda/honda_008.jpg",
+                    "images/honda/honda_009.jpg",
+                    "images/honda/honda_010.jpg",
+                    "images/honda/honda_011.jpg"
                 ]
             },
             project3: {
-                title: "Sci-Fi Character Series",
-                company: "GameDev Studios",
+                title: "V-Híd SMD-80 Touch",
+                company: "Arworks Ltd.",
                 year: "2024",
+                thumbnail: "images/v-hid_touch/vhidtouch_thumbnail.jpg",
                 description: "Complete character development pipeline for a sci-fi gaming project. The work encompassed concept refinement, high-poly sculpting, retopology, UV mapping, texturing, and final presentation renders. The character design focused on futuristic armor and cybernetic enhancements while maintaining human proportions and appeal.",
-                techStack: ["ZBrush", "Maya", "Substance Painter", "Marmoset Toolbag"],
+                techStack: ["3ds Max", "Substance Painter", "Photoshop", "Unity"],
                 images: [
-                    "Project 3 - Character Turnaround",
-                    "Project 3 - Detail Sculpt",
-                    "Project 3 - Texture Breakdown",
-                    "Project 3 - Posed Render",
-                    "Project 3 - Concept Comparison",
-                    "Project 3 - Technical Sheet"
+                    "images/v-hid_touch/vhid_001.jpg",
+                    "images/v-hid_touch/vhid_002.jpg",
+                    "images/v-hid_touch/vhid_003.jpg",
+                    "images/v-hid_touch/vhid_004.jpg",
+                    "images/v-hid_touch/vhid_005.jpg",
+                    "images/v-hid_touch/vhid_006.jpg",
+                    "images/v-hid_touch/vhid_007.jpg",
+                    "images/v-hid_touch/vhid_008.jpg",
+                    "images/v-hid_touch/vhid_009.jpg"
                 ]
             },
             project4: {
@@ -950,6 +903,9 @@
 
         function openModal(projectId) {
             const project = projectData[projectId];
+
+            console.log("Modal megnyitása ehhez a project objektumhoz:", project);
+
             if (!project) return;
 
             // Update modal content
@@ -969,8 +925,8 @@
             });
 
             // Setup carousel
-            setupCarousel(project.images);
-            
+            setupCarousel(project);
+
             // Show modal
             document.getElementById('projectModal').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -981,25 +937,39 @@
             document.body.style.overflow = 'auto';
         }
 
-        function setupCarousel(images) {
+        // Töröld ki a régi setupCarousel funkciódat, és illeszd be ezt a helyére:
+
+        function setupCarousel(project) { // A lényeg itt van: a paraméter neve 'project'
+            // Ha a project maga nem létezik, vagy nincs benne 'images' tömb,
+            // használunk egy üres tömböt, hogy a kód ne omoljon össze.
+            const images = (project && project.images) ? project.images : [];
+
             const track = document.getElementById('carouselTrack');
             const indicators = document.getElementById('carouselIndicators');
-            
+
             // Clear existing content
             track.innerHTML = '';
             indicators.innerHTML = '';
-            
+
             totalSlides = images.length;
             currentSlide = 0;
 
-            // Create slides
-            images.forEach((imageText, index) => {
+            if (totalSlides === 0) {
+                // Opcionális: jeleníts meg egy üzenetet, ha nincs kép
+                track.innerHTML = '<div class="carousel-slide">No images available for this project.</div>';
+                updateCarousel(); // Frissítjük, hogy az indikátorok eltűnjenek
+                return;
+            }
+
+            // Create slides and indicators
+            images.forEach((imagePath, index) => {
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
-                slide.textContent = imageText;
+
+                slide.innerHTML = `<img src="${imagePath}" alt="${project.title} kép">`;
+
                 track.appendChild(slide);
 
-                // Create indicator
                 const indicator = document.createElement('div');
                 indicator.className = 'carousel-indicator';
                 if (index === 0) indicator.classList.add('active');
@@ -1025,39 +995,82 @@
         function updateCarousel() {
             const track = document.getElementById('carouselTrack');
             const indicators = document.querySelectorAll('.carousel-indicator');
-            
+
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
             });
         }
 
         // Close modal when clicking outside
-        document.getElementById('projectModal').addEventListener('click', function(e) {
+        document.getElementById('projectModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
         // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // Modern event handling for portfolio buttons
-        const detailButtons = document.querySelectorAll('.view-details-btn');
-        detailButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectId = button.dataset.projectId;
-                if (projectId) {
-                    openModal(projectId);
-                }
-            });
-        });
-    
+    function generatePortfolioGrid() {
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    if (!portfolioGrid) return; // Ha nincs grid, ne csináljon semmit
+
+    portfolioGrid.innerHTML = ''; // Biztonság kedvéért kiürítjük
+
+    for (const projectId in projectData) {
+    const project = projectData[projectId];
+
+    // A leírás lerövidítése, hogy ne legyen túl hosszú a kártyán
+    const shortDescription = project.description.length > 120
+    ? project.description.substring(0, 120) + '...'
+    : project.description;
+
+    const portfolioItemHTML = `
+    <div class="portfolio-item">
+        <img src="${project.thumbnail}" alt="${project.title}" class="portfolio-image">
+        <h3>${project.title}</h3>
+        <div class="company">${project.company}</div>
+        <div class="year">${project.year}</div>
+        <p>${shortDescription}</p>
+        <div class="tech-stack">
+            ${project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        </div>
+        <button class="view-details-btn" data-project-id="${projectId}">View Details</button>
+    </div>
+    `;
+
+    portfolioGrid.innerHTML += portfolioItemHTML;
+    }
+    }
+
+    function attachButtonListeners() {
+    const detailButtons = document.querySelectorAll('.view-details-btn');
+    detailButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    const projectId = button.dataset.projectId;
+    if (projectId) {
+    openModal(projectId);
+    }
+    });
+    });
+    }
+
+    // Fő inicializáló funkció, ami mindent elindít
+    function initializePage() {
+    generatePortfolioGrid();
+    attachButtonListeners();
+    }
+
+    // Indítsuk el az egészet, amikor az oldal betöltődött
+    initializePage();
+
     </script>
 </body>
+
 </html>
