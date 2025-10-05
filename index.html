@@ -424,12 +424,15 @@
             justify-content: center;
         }
 
-        .carousel-slide img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
+        .carousel-slide img,
+.carousel-slide iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: none;
+}
 
         .carousel-btn {
             position: absolute;
@@ -903,6 +906,7 @@
                     { type: 'image', src: 'images/personal/medvefi_001.jpg' },
                     { type: 'image', src: 'images/personal/medvefi_002.jpg' },
                     { type: 'image', src: 'images/personal/medvefi_003.jpg' },
+                    { type: 'video', src: 'https://www.youtube.com/embed/src="https://www.youtube.com/embed/YZs0KwfQ14w?si=9WSAeRh8_l8rS5yW"' }
                 ]
             }
         };
